@@ -18,6 +18,9 @@ class CloudInfraServiceServicer(cloudrpc_pb2_grpc.CloudInfraServiceServicer):
     def CreateSecurityRule(self, request, context):
         print(f'Request received: {request}')
         secRule = request.securityrule
+
+        # @todo Implement creation of security rule in VPP
+
         context.set_code(grpc.StatusCode.OK)
         context.set_details('Rule created successfully')
         return secRule
